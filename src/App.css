@@ -1,38 +1,257 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(14,174,87,1) 0%, rgba(12,116,117,1) 90% );
+  color: white;
+  justify-content: center;
+  font-family: 'Open Sans Condensed', sans-serif;
+  min-height: 100vh;
+  min-width: 100vw;
+ 
+}
+header {
+  font-size: 2rem;
+  padding: 10px;
+}
+p
+{
+
+  font-family: 'Open Sans Condensed', sans-serif;
+  padding: 10px;
   text-align: center;
+  font-size:21px;
+  font-weight: 800;
+
 }
 
-.App-logo {
-  height: 40vmin;
+header{
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+
+}
+form {
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+form input,
+form button {
+  
+  padding: 0.5rem;
+  font-size: 2rem;
+  border: none;
+  background: white;
+}
+form button {
+ 
+  color: #0C7475;
+  background: #f7fffe;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+form button:hover {
+  background: #0C7475;
+  color: white;
+}
+.todo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-list {
+  min-width: 30%;
+  list-style: none;
+  padding-bottom: 20px;
+}
+
+.todo {
+  margin: 0.5rem;
+  padding-left: 10px;
+  background: white;
+  font-size: 1.5rem;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 1s ease;
+}
+.filter-todo {
+  padding: 1rem;
+  display: flex;
+  
+  
+}
+.todo li {
+  flex: 1;
+}
+
+.trash-btn,
+.complete-btn {
+  background: #0C7475;
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.complete-btn {
+  background: rgb(11, 212, 162);
+}
+.todo-item {
+  padding: 0rem 0.5rem;
+}
+
+.fa-trash,
+.fa-check {
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.fall {
+  transform: translateY(10rem) rotateZ(20deg);
+  opacity: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+.getQuotes {
+  background-color: #c6d315; /* Green */
+  border: none;
+  color: #0C7475;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 16px;
+
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.getQuotes {
+  /* margin-top: 15px;
+  margin-left: 42%;   */
+  margin: 0 auto;
+  display: block;
+  font-weight: 700;
+  background-color: white; 
+  color: #0C7475; 
+  border: 2px solid #cddb0c;
+}
+
+.getQuotes:hover {
+  background-color: #bae209;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+/*CUSTOM SELECTOR */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background-image: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Custom Select */
+.select {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
 }
+select {
+  color: #0C7475;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  width: 12rem;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+/* Arrow */
+.select::after {
+  content: "\25BC";
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  background: #0C7475;
+  cursor: pointer;
+  pointer-events: none;
+}
+/* Transition */
+
+.select:hover::after {
+  color: #0C7475;
+  background-color:#f7fffe ;
+}
+footer{
+  color: white;
+  background-color: #0ead58a4;
+  padding: 1px;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 18px;
+  margin-top: 100%;
+  
+}
+
+a{
+  color: white;
+}
+@media (max-width:550px){
+  header{
+    font-size: 24px;
+
+  }
+  p{
+    font-size: 18px;
+  }
+  .getQuotes{
+    font-size: 15px;
+  }
+  .todo{
+    font-size: 20px;
+  }
+  .todo-list{
+    padding-bottom: 20px;
+  }
+  
+  form input{
+    width: 90%;
+    font-size: 21px;
+  }
+  form{
+    border: #0C7475;
+    display: flex;
+    flex-direction: column;
+    
+  }
+  form button{
+    margin-top: 10px;
+  }
+  header{
+    text-align: center;
+  }
+  /* .getQuotes{
+    margin-left: 30%;
+  } */
+
+}
+
